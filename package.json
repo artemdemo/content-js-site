@@ -1,0 +1,19 @@
+{
+  "name": "content-js-site",
+  "version": "1.0.0",
+  "description": "Add js modules to content driven website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server:dev",
+    "server:dev": "http-server ./website -a 127.0.0.1 -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem Demo",
+  "license": "MIT",
+  "dependencies": {
+    "conditioner-js": "^1.2.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
