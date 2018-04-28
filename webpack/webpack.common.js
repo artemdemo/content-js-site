@@ -41,7 +41,7 @@ const fontLoaders = [
 module.exports = (options) => {
     return {
         entry: {
-            // Entries will be added in webpack.config.js (via configFactory)
+            bundle: './source/index.js',
         },
         output: {
             path: `${process.cwd()}/${options.buildFolder}`,

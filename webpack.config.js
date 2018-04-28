@@ -16,4 +16,4 @@ if (process.argv.indexOf('--json') === -1) {
     console.log('\n', ' ❤ isProduction:', isProduction, '\n');
 }
 
-module.exports = configFactory(webpackConfig);
+module.exports = webpackConfig;

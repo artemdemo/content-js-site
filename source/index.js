@@ -8,7 +8,12 @@ conditioner.addPlugin({
     moduleGetConstructor: module => module.default,
 
     // override the import
-    moduleImport: name => import(`${name}`)
+    // set to "lazy" to create a separate chunk for each module
+    moduleImport: name => import(
+        /* webpackMode: "lazy" */
+        /* webpackChunkName: "[request]" */
+        `${name}`
+    )
 });
 
 // Mount modules found in the subtree of the passed element.

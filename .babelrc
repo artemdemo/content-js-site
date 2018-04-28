@@ -9,6 +9,7 @@
   "plugins": [
     "transform-object-assign",
     "transform-class-properties",
+    "syntax-dynamic-import",
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true
