@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const {
     IgnorePlugin,
@@ -42,18 +41,18 @@ const fontLoaders = [
 module.exports = (options) => {
     return {
         entry: {
-            bundle: './source/index.jsx',
+            // Entries will be added in webpack.config.js (via configFactory)
         },
         output: {
             path: `${process.cwd()}/${options.buildFolder}`,
 
             // @docs https://webpack.js.org/guides/caching/#deterministic-hashes
             filename: options.isProduction ?
-                './js/[name]-[chunkhash].js' :
-                './js/[name].js',
+                './[name]-[chunkhash].js' :
+                './[name].js',
             chunkFilename: options.isProduction ?
-                './js/[id].chunk-[chunkhash].js' :
-                './js/[id].chunk.js',
+                './[id].chunk-[chunkhash].js' :
+                './[id].chunk.js',
             publicPath: '/',
         },
         resolve: {
@@ -89,12 +88,6 @@ module.exports = (options) => {
             // Defining global ENV variable
             new DefinePlugin({
                 ENV: {production: options.isProduction},
-            }),
-
-            new HtmlWebpackPlugin({
-                template: './source/index.ejs',
-                filename: './index.html',
-                appVersion: options.appVersion,
             }),
 
             new CleanWebpackPlugin([options.buildFolder], {

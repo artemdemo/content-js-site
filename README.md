@@ -1,3 +1,3 @@
-# JS in content driven website
+# JS modules in content driven website
 
 
