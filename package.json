@@ -12,6 +12,7 @@
   "author": "Artem Demo",
   "license": "MIT",
   "dependencies": {
+    "animejs": "^2.2.0",
     "conditioner-core": "^2.3.1"
   },
   "devDependencies": {
