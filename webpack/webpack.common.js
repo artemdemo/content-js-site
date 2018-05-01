@@ -48,11 +48,11 @@ module.exports = (options) => {
 
             // @docs https://webpack.js.org/guides/caching/#deterministic-hashes
             filename: options.isProduction ?
-                './[name]-[chunkhash].js' :
-                './[name].js',
+                './js/[name]-[chunkhash].js' :
+                './js/[name].js',
             chunkFilename: options.isProduction ?
-                './[id].chunk-[chunkhash].js' :
-                './[id].chunk.js',
+                './js/[id].chunk-[chunkhash].js' :
+                './js/[id].chunk.js',
             publicPath: '/',
         },
         resolve: {
@@ -94,7 +94,10 @@ module.exports = (options) => {
                 verbose: true,
                 dry: false,
                 root: process.cwd(),
-                exclude: ['.gitignore'],
+                exclude: [
+                    '.gitignore',
+                    'price.html'
+                ],
             }),
 
             ...extractStyles.plugins(options.extractStylesFile, options.isProduction),

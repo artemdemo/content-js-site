@@ -2,7 +2,7 @@ import * as conditioner from 'conditioner-core/conditioner-core.esm';
 
 conditioner.addPlugin({
     // converts module aliases to paths
-    moduleSetName: name => `./js/${name}.js`,
+    // moduleSetName: name => `js/${name}.js`,
 
     // get the module constructor
     moduleGetConstructor: module => module.default,
@@ -12,7 +12,7 @@ conditioner.addPlugin({
     moduleImport: name => import(
         /* webpackMode: "lazy" */
         /* webpackChunkName: "[request]" */
-        `${name}`
+        `./modules/${name}`
     )
 });
 
