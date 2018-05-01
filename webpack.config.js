@@ -1,5 +1,3 @@
-const configFactory = require('./webpack/configFactory');
-
 const isProduction = process.env.NODE_ENV === 'production';
 const configOptions = {
     buildFolder: './website',

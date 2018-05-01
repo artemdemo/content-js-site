@@ -4,7 +4,7 @@
   "description": "Add js modules to content driven website",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server:dev",
+    "start": "npm run build && npm run server:dev",
     "server:dev": "http-server ./website -a 127.0.0.1 -p 8080",
     "build": "webpack --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
